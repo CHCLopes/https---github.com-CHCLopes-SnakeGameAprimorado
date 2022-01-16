@@ -53,18 +53,21 @@ function update (event){
 
 function gameStart() {
 
-  /* No momento o jogo está com o limite fechado (se tocar nas bordas o jogo acaba). Se quiser deixar com o limite em loop (saindo de um lado e entrando pelo outro inverso) copie o código abaixo dentro do limite de borda e coloque o código que está lá dentro de um comentário.*/
+  /* No momento o jogo está:
 
-  
+  [ ]com o limite fechado (se tocar nas bordas o jogo acaba). 
+  [x]com o limite em loop (saindo de um lado e entrando pelo outro inverso)
+
+  Se quiser fechar ou abrir copie um dos códigos abaixo dentro do limite de borda e coloque o código que está lá dentro de um comentário.*/
+
+  /* BORDA ABERTA:
   if (snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
   if (snake[0].x < 0 && direction == "left") snake[0].x = 16 * box;
   if (snake[0].y > 15 * box && direction == "down") snake[0].y = 0;
   if (snake[0].y < 0 && direction == "up") snake[0].y = 16 * box;
+  */
   
-  
-  // começo do limite de borda
-
- /*
+  /* BORDA FECHADA
   if (snake[0].x > 15 * box && direction == "right"){
     clearInterval(jogo);
     alert('Game Over :(')
@@ -82,7 +85,14 @@ function gameStart() {
     alert('Game Over :(')
   }
   */
+  
+  // começo do limite de borda
 
+  if (snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
+  if (snake[0].x < 0 && direction == "left") snake[0].x = 16 * box;
+  if (snake[0].y > 15 * box && direction == "down") snake[0].y = 0;
+  if (snake[0].y < 0 && direction == "up") snake[0].y = 16 * box;
+  
   // fim do limite de borda
   
   criarBG();
